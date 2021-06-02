@@ -48,15 +48,7 @@ The path to the TFTP root directiory inside the config directiory of homeassista
 Use a different directory with bootloaders for each macadress. If enabled the path would look like this:
 `tftproot/macadressofpc/pxebootfiles`
 
-#### Option: `dhcpoption`
+#### Option: `dnsmasqoptions`
 
-DHCP option passed to DNSmasq. Look into documationion for DNSmasq for more information.
-
-#### Option: `dhcpboot`
-
-DHCP boot options passed to DNSmasq. Look into documationion for DNSmasq for more information.
-
-#### Option: `dhcpvendorclass`
-
-DHCP vendorclass options passed to DNSmasq. Look into documationion for DNSmasq for more information.
+Additional options put into dnsmasq config. Look into documationion for DNSmasq for more information.
 
