@@ -1,0 +1,31 @@
+{
+  "name": "ProxyPXE",
+  "version": "0.0.0.1",
+  "slug": "proxypxe",
+  "description": "A dnsmasq instance implementing a ProxyDHCP and tftp server",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "advanced": true,
+  "startup": "system",
+  "init": false,
+  "host_network": true,
+  "privileged": [
+    "NET_ADMIN"
+  ],
+  "map": [ "config" ],
+  "options": {
+    "DHCPserver": "192.168.1.1",
+    "TFTPpath": "/tftp",
+    "MACROOT" : false,
+    "dhcpoption" : [ "vendor:PXEClient,6,2b" ],
+    "dhcpvendorclass" : [ "set:BIOS,PXEClient:Arch:00006", "set:UEFI,PXEClient:Arch:00007" ],
+    "dhcpboot" : [ "tag:UEFI,grub/bootx64.efi" ]
+  },
+  "schema": {
+    "DHCPserver": "str",
+    "TFTPpath": "str",
+    "MACROOT" : "bool",
+    "dhcpoption" : [ "str" ],
+    "dhcpvendorclass" : [ "str" ],
+    "dhcpboot" : [ "str" ]
+  }
+}
