@@ -23,7 +23,6 @@ profile dnsmasq flags=(attach_disconnected,mediate_deleted) {
 
   # Access to Options.json and other files within your addon
   /data/** rw,
-  /tftp/** rw,
 
   # Execution program
   /usr/sbin/dnsmasq cx,
@@ -43,7 +42,7 @@ profile dnsmasq flags=(attach_disconnected,mediate_deleted) {
     network inet6 raw,
 
     /usr/sbin/dnsmasq rm,
-    /tftp/** rw,
+    /config/** r,
     /etc/dnsmasq.conf rw,
     /run/*dnsmasq*.pid w,
     /run/dnsmasq/** rw,
