@@ -35,18 +35,26 @@ dhcpboot:
   - tag:UEFI,grub/bootx64.efi
 ```
 
-### Option: `DHCPserverIP` (required)
-
-The IP address of the DHCP server in your network.
-
-### Option: `TFTPpath` (required)
+### Option: `tftppath` 
 
 The path to the TFTP root directiory inside the config directiory of homeassistant.
 
-#### Option: `MACROOT`
+#### Option: `macroot`
 
 Use a different directory with bootloaders for each macadress. If enabled the path would look like this:
 `tftproot/macadressofpc/pxebootfiles`
+
+### Option: `dhcpproxy`
+
+Set to true if dhcp proxy is wanted. Only works on IPv4 networks.
+
+### Option: `dhcpserver` 
+
+Address of dhcpserver if dhcp proxy is enabled.
+
+### Option: `dhcprange` 
+
+Manually set dhcp range. Only used if dhcp proxy is disabled.
 
 #### Option: `dnsmasqoptions`
 
