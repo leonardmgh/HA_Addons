@@ -13,22 +13,26 @@
   ],
   "map": [ "config" ],
   "options": {
-    "DHCPserver": "192.168.1.1",
-    "TFTPpath": "/tftp",
-    "MACROOT" : false,
+    "tftppath": "/tftp",
+    "macroot" : false,
+    "dhcpproxy" : false,
+    "dhcpserver": "192.168.1.1",
+    "dhcprange" : [ "dead:db8:f00f:cafe::1, dead:db8:f00f:cafe::500, 64, 12h" ],
     "dnsmasqoptions" : [
       "dhcp-no-override",
       "dhcp-vendorclass=BIOS,PXEClient:Arch:00000",
       "dhcp-vendorclass=UEFI32,PXEClient:Arch:00006",
       "dhcp-vendorclass=UEFI,PXEClient:Arch:00007",
       "dhcp-vendorclass=UEFI64,PXEClient:Arch:00009",
-      "dhcp-boot=net:UEFI,bootx64.efi,,192.168.1.5",
-      "dhcp-boot=net:UEFI64,bootx64.efi,,192.168.1.5" ]
+      "dhcp-boot=net:UEFI,bootx64.efi",
+      "dhcp-boot=net:UEFI64,bootx64.efi," ]
   },
   "schema": {
-    "DHCPserver": "str",
-    "TFTPpath": "str",
-    "MACROOT" : "bool",
+    "tftppath": "str",
+    "macroot" : "bool",
+    "dhcpproxy" : "bool",
+    "dhcpserver": "str",
+    "dhcprange" : [ "str" ],
     "dnsmasqoptions" : [ "str" ]
   }
 }
