@@ -1,6 +1,6 @@
 {
   "name": "ProxyPXE",
-  "version": "0.0.0.5",
+  "version": "0.0.0.5.1",
   "slug": "proxypxe",
   "description": "A dnsmasq instance implementing a ProxyDHCP and tftp server",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
